@@ -73,7 +73,7 @@ var dqliteCmd = &cobra.Command{
 		}
 		ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 
-		ch := make(chan os.Signal, 1)
+		ch := make(chan os.Signal)
 		signal.Notify(ch, unix.SIGPWR)
 		signal.Notify(ch, unix.SIGINT)
 		signal.Notify(ch, unix.SIGQUIT)
